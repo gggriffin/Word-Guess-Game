@@ -1,16 +1,20 @@
 
 var scifi = ["dune", "endor", "spock", 
 "borg", "xwing", "zerg", "lightsaber", 
-"xenomorph", "vader", "thanos", "picard",
+"krypton", "vader", "thanos", "picard",
 "zaphod"];
+
+var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i",
+                "j", "k", "l", "m", "n", "o", "p", "q", "r",
+                "s", "t", "u", "v", "w", "x", "y", "z"]
 
 var wins = 0;
 var incorrectGuess = [];
 var correctGuess = [];
 var currentWord = [];
 var computerWord = scifi[Math.floor(Math.random() * scifi.length)]
-var remainingGuesses = 10;
-
+var totalGuesses = 10;
+var remainingGuesses = 0;
 
 
 //var userGuess = document.getElementById("guess").value
@@ -26,36 +30,52 @@ onload = function()
         {
         currentWord.push("_");
         }
-        document.getElementById("computerChoice").innerText = currentWord.join(" ");
-     
-        console.log(computerWord); //Used to check computerWord. Delete when finalized
+    document.getElementById("computerChoice").innerText = currentWord.join(" ");
+    document.getElementById("guessesRemaining").innerText = "Guesses remaining: " + totalGuesses;
+    document.getElementById("winTotal").innerText = "Wins: " + wins;
+    console.log(computerWord); //Used to check computerWord. Delete when finalized
     }
 
     document.onkeyup = function(event) {
-       
-        if (computerWord.indexOf(event.key) > -1) //indexOf to check
+       //if else to check if (totalGuesses - incorrectGuess.length) < 0 and reset variables if so
+        if (currentWord.indexOf("_") === -1) {
+            currentWord = [];
+            incorrectGuess = [];
+            wins++
+            computerWord = scifi[Math.floor(Math.random() * scifi.length)];
+            
+            for (var i = 0; i < computerWord.length; i++) 
+            {
+                currentWord.push("_");
+            }
+            document.getElementById("computerChoice").innerText = currentWord.join(" ");
+            document.getElementById("guessesRemaining").innerText = "Guesses remaining: " + totalGuesses;
+            document.getElementById("winTotal").innerText = "Wins: " + wins;
+        }
+        else if ((totalGuesses - incorrectGuess.length) < 2) {
+            currentWord = [];
+            incorrectGuess = [];
+        }
+
+         if (alphabet.indexOf(event.key) > -1 && computerWord.indexOf(event.key) > -1) //indexOf to check
         {
             correctGuess.push(event.key);
             currentWord[computerWord.indexOf(event.key)] = event.key;
             document.getElementById("computerChoice").innerText = currentWord.join(" ");
             
-        } else {
+        } else if(alphabet.indexOf(event.key) > -1) {
 
             incorrectGuess.push(event.key);
             document.getElementById("lettersGuessed").innerText = "Letters Guessed: " + incorrectGuess;
-            
+            document.getElementById("guessesRemaining").innerText = "Guesses remaining: " + (totalGuesses - incorrectGuess.length);
         }
-        }
-        
-            //for loop tocheck playerGuess against computerWord
-        ;
-    
+        };
    
 
-//User key is checked against selected word
 
 
-//Guesses Left upates
+
+//remainingGuesses upates
 
 
 //Game ends after word is guessed or too many guesses
