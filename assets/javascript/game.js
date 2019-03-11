@@ -2,7 +2,7 @@
 var scifi = ["dune", "endor", "spock", 
 "borg", "xwing", "zerg", "lightsaber", 
 "krypton", "vader", "thanos", "picard",
-"zaphod"];
+"leia"];
 
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i",
                 "j", "k", "l", "m", "n", "o", "p", "q", "r",
@@ -43,7 +43,8 @@ onload = function()
             incorrectGuess = [];
             wins++
             computerWord = scifi[Math.floor(Math.random() * scifi.length)];
-            
+            console.log(computerWord);
+
             for (var i = 0; i < computerWord.length; i++) 
             {
                 currentWord.push("_");
@@ -57,7 +58,7 @@ onload = function()
             incorrectGuess = [];
         }
 
-         if (alphabet.indexOf(event.key) > -1 && computerWord.indexOf(event.key) > -1) //indexOf to check
+         if (alphabet.indexOf(event.key) > -1 && computerWord.indexOf(event.key) > -1) //indexOf to check user guess against computerChoice
         {
             correctGuess.push(event.key);
             currentWord[computerWord.indexOf(event.key)] = event.key;
@@ -71,20 +72,4 @@ onload = function()
         }
         };
    
-
-
-
-
-//remainingGuesses upates
-
-
-//Game ends after word is guessed or too many guesses
-
-
-//Win value is updated
-
-
-//Word is selected from array and displayed as blanks
-
-
 
