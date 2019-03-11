@@ -5,15 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Guess Game</title>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+    <link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="./assets/javascript/game.js"></script>
 </head>
 <body>
-    <div class="h1">Press any key to get started! Press "enter" to submit your guess</div>
-    <div class="h4" id="computerChoice">Computer Choice</div>
-    <div class="h4" id="winTotal">Wins:</div>
-    <div class="h4" id="guessesRemaining">Number of Guesses Remaining:</div>
-    <div class="h4" id="lettersGuessed"></div>
+    <div class="background">
+        <div class="container">
+            <div class="row">
+                <div class="display-1 col-md-10 offset-md-1 text-center">Space and Stuff</div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="h2 text-center col-md-8 offset-md-2">Press any key to get started!</div>
+            </div>
+            <div class="row">
+                <div class="h5 text-center col-md-8 offset-md-2">(press "enter" to submit your guess)</div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="h2 text-center col-md-8 offset-md-2 font-weight-bold" id="computerChoice">Computer Choice</div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="h3 col-md-2 text-center offset-md-4 py-5" id="winTotal">Wins:</div>
+            <div class="h3 col-md-2 text-center py-5" id="guessesRemaining">Number of Guesses Remaining:</div>
+        </div>
+        <div class="row">
+            <div class="h3 col-md-8 offset-md-2 text-center" id="lettersGuessed"></div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

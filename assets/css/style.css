@@ -1,0 +1,18 @@
+* {
+    color: white;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.background {
+    background-image: url("../images/galaxy-infinity-milky-way-110854.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}

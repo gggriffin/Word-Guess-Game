@@ -31,7 +31,7 @@ onload = function()
         currentWord.push("_");
         }
     document.getElementById("computerChoice").innerText = currentWord.join(" ");
-    document.getElementById("guessesRemaining").innerText = "Guesses remaining: " + totalGuesses;
+    document.getElementById("guessesRemaining").innerText = "Guesses Remaining: " + totalGuesses;
     document.getElementById("winTotal").innerText = "Wins: " + wins;
     console.log(computerWord); //Used to check computerWord. Delete when finalized
     }
